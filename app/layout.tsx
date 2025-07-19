@@ -23,7 +23,7 @@ export default function RootLayout({
         <body className="font-poppins antialiased">
           <div className="flex min-h-screen flex-col">
             <Header />
-            <main >{children}</main>
+            <main className="flex-1">{children}</main>
             <Footer />
           </div>
         </body>
