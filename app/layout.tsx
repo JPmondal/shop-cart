@@ -20,6 +20,7 @@ export default function RootLayout({
     <html lang="en">
       <body className="font-poppins antialiased">
         <Header />
+        <p>{process.env.hello}</p>
         {children}
         <Footer />
       </body>
