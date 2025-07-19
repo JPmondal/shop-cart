@@ -1,5 +1,8 @@
 import { Facebook, Github, Linkedin, Slack, Youtube } from "lucide-react";
 import React from "react";
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "./ui/tooltip";
+import Link from "next/link";
+import { cn } from "@/lib/utils";
 
 const socialLink = [
   {
@@ -14,7 +17,7 @@ const socialLink = [
   },
   {
     title: "Linkedin",
-    href: "https://www.youtube.com",
+    href: "https://www.linkedin.com",
     icon: <Linkedin className="w-5 h-5" />,
   },
   {
@@ -29,8 +32,31 @@ const socialLink = [
   },
 ];
 
-const SocialMedia = () => {
-  return <div>Social Media</div>;
+interface Props {
+  className?: string;
+  iconClassName?: string;
+  tooltipClassName?: string;
+}
+
+const SocialMedia = ({ className, iconClassName, tooltipClassName }: Props) => {
+  return (
+    <TooltipProvider>
+      <div className={cn("flex items-center gap-3.5",className)}>
+        {socialLink?.map((item, index) => (
+          <Tooltip key={index}>
+            <TooltipTrigger asChild>
+              <Link className={cn("p-2 border rounded-full hover:text-white hover:border-shop_light_green hoverEffect",iconClassName)} rel="noopener noreferrer" target="_blank"  href={item.href}>
+                {item.icon}
+              </Link>
+            </TooltipTrigger>
+            <TooltipContent className={cn("text-darkColor bg-white font-semibold",tooltipClassName)}>
+              {item.title}
+            </TooltipContent>
+          </Tooltip>
+        ))}
+      </div>
+    </TooltipProvider>
+  );
 };
 
 export default SocialMedia;
