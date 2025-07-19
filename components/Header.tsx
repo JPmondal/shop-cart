@@ -7,11 +7,13 @@ import CartIcon from "./CartIcon";
 import FavouriteButton from "./FavouriteButton";
 import SignIn from "./SignIn";
 import MobileMenu from "./MobileMenu";
+import { currentUser } from "@clerk/nextjs/server";
+import { SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
 
+const Header = async () => {
+  const user = currentUser();
 
-const Header = () => {
   return (
-    //Do a push
     <header className="bg-white py-4 border-b text-lightColor">
       <Container className="flex items-center justify-between">
         <div className="w-auto md:w-1/3 flex items-center gap-2.5 justify-start md:gap-0">
@@ -23,7 +25,12 @@ const Header = () => {
           <SearchBar />
           <CartIcon />
           <FavouriteButton />
-          <SignIn />
+          <SignedIn>
+            <UserButton />
+          </SignedIn>
+          <SignedOut>
+            <SignIn />
+          </SignedOut>
         </div>
       </Container>
     </header>
