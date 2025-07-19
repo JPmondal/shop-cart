@@ -11,6 +11,7 @@ import MobileMenu from "./MobileMenu";
 
 const Header = () => {
   return (
+    //Do a push
     <header className="bg-white py-4 border-b text-lightColor">
       <Container className="flex items-center justify-between">
         <div className="w-auto md:w-1/3 flex items-center gap-2.5 justify-start md:gap-0">
@@ -22,7 +23,6 @@ const Header = () => {
           <SearchBar />
           <CartIcon />
           <FavouriteButton />
-
           <SignIn />
         </div>
       </Container>
