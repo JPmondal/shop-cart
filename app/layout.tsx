@@ -16,6 +16,7 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  console.log(process.env.hello);
   return (
     <html lang="en">
       <body className="font-poppins antialiased">
