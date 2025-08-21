@@ -14,7 +14,10 @@
   --color-darkColor: #151515;
   --color-lightColor: #52525b;
   --color-lightOrange: #fca99b;
-  --color-shop_light_green: #3b9c3c;
+  --color-shop_lighter_green: #93D991;
+  --color-dark_blue: #6c7fd8;
+  --color-shop_light_text: #686e7d;
+  --color-shop_lighter_text : #ababab
 }
 
 @theme inline {
@@ -58,7 +61,6 @@
 }
 
 :root {
-  
   --radius: 0.625rem;
   --background: oklch(1 0 0);
   --foreground: oklch(0.145 0 0);

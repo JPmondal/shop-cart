@@ -32,3 +32,4 @@ export const productType = [
   { title: "Refrigerators", value: "refrigerators" },
   { title: "Others", value: "others" },
 ];
+
